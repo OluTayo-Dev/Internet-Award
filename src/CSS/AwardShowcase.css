@@ -1,0 +1,189 @@
+.awards-section {
+  padding: 4rem 1rem;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+.awards-heading {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 116);
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab-btn:hover {
+  background-color: #bbb;
+}
+
+.tab-btn.active {
+  background-color: rgb(0, 0, 116);
+  color: white;
+}
+
+/* Awards layout (flex row on desktop) */
+.awards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  flex-direction: row; /* desktop layout */
+}
+
+.award-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.award-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.award-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: shine 2s infinite;
+}
+
+.award-title {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.award-description {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Vote button */
+.vote-btn {
+  margin-top: 1rem;
+  background-color: rgb(0, 0, 116);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.vote-btn:hover {
+  background-color: #0087d6;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+.vote-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.vote-form button {
+  background-color: #101010;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+/* Mobile view: stack cards vertically */
+@media (max-width: 768px) {
+  .awards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
